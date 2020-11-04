@@ -2,13 +2,12 @@
 
 int n;
 
-void color(int[n][n], int[], char[]);
-int sum(int[]);
+void color(int[n][n], int[], char[], int);
 int degree(int[], int[]);
 
 int main()
 {
-    int i, j, m, a, b;
+    int i, j, m, a, b, av;
     scanf("%d%d", &n, &m);
     int G[n][n], r[n];
 	char C[n];
@@ -25,18 +24,19 @@ int main()
         G[a][b]=1;
         G[b][a]=1;
     }
-	color(G, r, C);
+	av = n;
+	color(G, r, C, av);
 	for(i=0;i<n;i++)
 		printf("%c\n", C[i]);
     return 0;
 }
 
-void color(int G[n][n], int r[], char C[])
+void color(int G[n][n], int r[], char C[], int av)
 {
-	int i, j, k, b=0;
-	if(sum(r)==1)
+	int i, j, k;
+	if(av==1)
 	{
-		for(i=0;i<n;i++)
+		for(i=n-1;i>=0;i--)
 		{
 			if(r[i])
 			{
@@ -52,7 +52,7 @@ void color(int G[n][n], int r[], char C[])
 			if(degree(G[i], r)<6)
 			{
 				r[i]=0;
-				color(G, r, C);
+				color(G, r, C, av-1);
 				r[i]=1;
 				int a[6]={1, 1, 1, 1, 1, 1};
 				for(j=0;j<n;j++)
@@ -75,15 +75,7 @@ int degree(int a[], int r[])
 {
 	int i, c=0;
 	for(i=0;i<n;i++)
-		if(r[i])
-			c+=a[i];
-	return c;
-}
-
-int sum(int a[])
-{
-	int i, c=0;
-	for(i=0;i<n;i++)
-		c+=a[i];
+		if(r[i] && a[i])
+			c++;
 	return c;
 }
