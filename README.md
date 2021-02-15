@@ -3,7 +3,6 @@
 
 6-Colouring a planar graph recursively
 
-[You're meddling with powers you don't understand](https://tenor.com/view/beetlejuice-understand-lafuddyduddy-ted-meddling-gif-17925726.gif)
+[You're meddling with powers you don't understand](https://media1.tenor.com/images/6401cf26ed9cd8a0f726384a5187cf41/tenor.gif)
 
-[Already Kno](https://tenor.com/view/already-already-know-obama-meme-gif-9664264.gif)
-
+[Already Kno](https://media1.tenor.com/images/7a7241c7ceceaede68e32bf197b25bea/tenor.gif)
